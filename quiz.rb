@@ -74,7 +74,7 @@ def show_q(question, q_A, q_B, q_C, q_D, answer)
   if $noCorrect >= 6 then
 
     #tell the player the grade they scored
-    print "You correctly answered " + $noCorrect.to_s + " question(s). "
+    print "You scored " + $noCorrect.to_s + " out of 10 question(s). "
     puts "You have passed the Football Trivia Quiz!\n\n"
     puts "You have earned a grade of: Football Brain"      if $noCorrect == 6
     puts "You have earned a grade of: Footballing Genius!" if $noCorrect == 7
@@ -83,10 +83,10 @@ def show_q(question, q_A, q_B, q_C, q_D, answer)
     puts "You have earned a grade of: Future Manager in the making!" if $noCorrect == 10
     print"\n\nPress Enter to proceed."
 
-  else #the player failed the quiz
+  else $noCorrect <= 5 #the player failed the quiz
 
     #tell the player of the low grade they scored
-    print "You got " + (10 - $noCorrect).to_s + " questions wrong."
+    print "You scored " + $noCorrect.to_s + " out of 10 questions. "
     puts "You have failed the Football Trivia Quiz!\n\n"
     puts "Perhaps you should brush up on your Football knowledge"
     puts "before you retake the quiz"
